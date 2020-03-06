@@ -26,7 +26,7 @@ app.message(triggerRegex, async ({message, context}) => {
         await app.client.chat.postMessage({
             token: context.botToken,
             channel: 'GV0JAQE05',
-            text: `<@${message.user}> posted a trigger in ${messsage.channel}: ${message.text}`
+            text: `<@${message.user}> posted a trigger in ${message.channel}: ${message.text}`
         });
     } catch (error) {
         console.error(error);
