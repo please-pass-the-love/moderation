@@ -54,3 +54,25 @@ module.exports.affirmations = [
     "If you can dream it, you can do it",
     "Inhale the future and exhale the past",
 ];
+
+module.exports.triggers = [
+    "i don’t wanna be here",
+    "i don’t wanna live",
+    "no one likes you",
+    "supremacy",
+    "suicide",
+    "self-harm",
+    "selfharm",
+    "cut",
+    "abuse",
+    "assault",
+    "kill",
+    "die",
+    "drug",
+    "fag",
+    "slut",
+    "whore",
+    "bitch",
+    "sex",
+    "dyke"
+];
