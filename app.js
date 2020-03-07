@@ -54,10 +54,9 @@ const triggerRegex =
     new RegExp(`(${triggers.join('|')})`, 'i');
 
 const app = new App({
-    token: 'xoxb-974706494115-975281028755-mU7qCAaTv51l8pzhIBU6xhIH',
-    signingSecret: '819d3a0ea7d164efd0f024efb3f8d2ea'
+    token: process.env.SLACK_BOT_TOKEN,
+    signingSecret: process.env.SLACK_SIGNING_SECRET
 });
-
 
 function buildSalutation(salutations, user) {
     let salutation = chooseRandom(salutations);
@@ -117,8 +116,8 @@ app.message(triggerRegex, async ({message, context}) => {
 });
 
 // Autojoin newly created conversations
-app.event('channel_created', ({ event, say }) => {  
-    var channel = event.channel;
+app.event('channel_created', ({ event }) => {  
+    const channel = event.channel;
     app.client.conversations.join({
         token: app.token,
         channel: channel.id
@@ -126,11 +125,11 @@ app.event('channel_created', ({ event, say }) => {
 });
 
 // Displays random image of dog when 'dog' is typed in a conversation
-app.message(/dog/i, async ({message, context, say}) => {
-    var url = "https://dog.ceo/api/breeds/image/random";
-	request.get(url, async function(err, response) {
+app.message(/dog/i, async ({say}) => {
+    const url = "https://dog.ceo/api/breeds/image/random";
+    request.get(url, async function(err, response) {
         const dog = JSON.parse(response.body);
-		var message = {
+        const message = {
             "text" : dogsays[randomInt(dogsays.length)],
             "attachments": [
                 {
@@ -149,11 +148,11 @@ app.message(/dog/i, async ({message, context, say}) => {
 
 
 // Displays random image of cat when 'cat' is typed in a conversation
-app.message(/cat/i, async ({message, context, say}) => {
-    var url = "https://api.thecatapi.com/v1/images/search?size=full";
+app.message(/cat/i, async ({say}) => {
+    const url = "https://api.thecatapi.com/v1/images/search?size=full";
     request.get(url, async function(err, response) {
-        var cat = JSON.parse(response.body);
-        var message = {
+        const cat = JSON.parse(response.body);
+        const message = {
             "text" : catsays[randomInt(catsays.length)],
             "attachments": [
                 {
