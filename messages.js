@@ -76,3 +76,15 @@ module.exports.triggers = [
     "sex",
     "dyke"
 ];
+
+module.exports.catsays = [
+    "Did someone say cat?",
+    "Purr, purr, purr....",
+    "I can haz cheezburger?",
+];
+
+module.exports.dogsays = [
+    "Did someone say dog?",
+    "Woof! Woof!",
+    "I can has petz now?",
+];
