@@ -51,7 +51,7 @@ const goodbyeRegex =
     new RegExp(buildSalutationRegex(goodbyes), 'i');
 
 const triggerRegex =
-    new RegExp(`(${triggers.join('|')})`, 'i');
+    new RegExp(`\b(${triggers.join('|')})`, 'i');
 
 const app = new App({
     token: process.env.SLACK_BOT_TOKEN,
@@ -130,7 +130,7 @@ app.message(/dog/i, async ({say}) => {
     request.get(url, async function(err, response) {
         const dog = JSON.parse(response.body);
         const message = {
-            "text" : dogsays[randomInt(dogsays.length)],
+            "text" : chooseRandom(dogsays),
             "attachments": [
                 {
                     "fallback": "Cute doggo",
@@ -153,7 +153,7 @@ app.message(/cat/i, async ({say}) => {
     request.get(url, async function(err, response) {
         const cat = JSON.parse(response.body);
         const message = {
-            "text" : catsays[randomInt(catsays.length)],
+            "text" : chooseRandom(catsays),
             "attachments": [
                 {
                     "fallback": "Cute kitten",
