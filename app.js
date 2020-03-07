@@ -119,7 +119,7 @@ app.message(triggerRegex, async ({message, context}) => {
 app.event('channel_created', ({ event }) => {  
     const channel = event.channel;
     app.client.conversations.join({
-        token: app.token,
+        token: process.env.SLACK_BOT_TOKEN,
         channel: channel.id
     });
 });
