@@ -151,6 +151,7 @@ app.event('app_mention', ({payload, say}) => {
 
 // Alerts moderators if a 'trigger' string was typed into a conversation
 app.message(triggerRegex, async ({message, context}) => {
+    console.log(`hit trigger in ${message.text}`)
     try {
         const url = `https://pleasepassthelove-dsm.slack.com/archives/${message.channel}/p${message.ts.split('.').join('')}`;
 
