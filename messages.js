@@ -1,3 +1,34 @@
+module.exports.greetings = [
+    "hi",
+    "hello",
+    "hey",
+    "hey there",
+    "what's up"
+];
+
+module.exports.goodMornings = [
+    "good morning",
+    "morning"
+];
+
+module.exports.goodAfternoons = [
+    "good afternoon",
+    "afternoon"
+];
+
+module.exports.goodnights = [
+    "good night",
+    "goodnight",
+    "night"
+];
+
+module.exports.goodbyes = [
+    "bye",
+    "goodbye",
+    "cya",
+    "take care"
+];
+
 module.exports.affirmations = [
     "Hi!",
     "Hello beautiful person!",
