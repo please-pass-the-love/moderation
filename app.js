@@ -16,7 +16,7 @@ app.message(/^(hi|hello|hey)$/i, ({ message, say }) => {
     say(`Hello <@${message.user}>!`);
 });
 
-app.message('sunshine', ({say}) => {
+app.event('app_mention', ({say}) => {
     const affirmation = affirmations[randomInt(affirmations.length)]
     say(affirmation);
 });
