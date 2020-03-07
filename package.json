@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dsmHack/pptl-moderation.git"
+    "url": "git+https://github.com/please-pass-the-love/moderation.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dsmHack/pptl-moderation/issues"
+    "url": "https://github.com/please-pass-the-love/moderation/issues"
   },
-  "homepage": "https://github.com/dsmHack/pptl-moderation#readme",
+  "homepage": "https://github.com/please-pass-the-love/moderation#readme",
   "dependencies": {
     "@slack/bolt": "^1.6.0",
     "request": "^2.88.2"
