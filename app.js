@@ -157,7 +157,7 @@ app.message(triggerRegex, async ({message, context}) => {
 
         await app.client.chat.postMessage({
             token: context.botToken,
-            channel: 'testing-public-channel', // channel ID: GV0JAQE05
+            channel: 'moderation', // channel ID: GV0JAQE05
             text: `<!channel> - <@${message.user}> posted a <${url}|trigger> in <#${message.channel}>`
         });
     } catch (error) {
