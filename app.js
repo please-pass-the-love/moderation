@@ -23,10 +23,12 @@ app.message('sunshine', ({say}) => {
 
 app.message(triggerRegex, async ({message, context}) => {
     try {
+        const url = `https://pleasepassthelove-dsm.slack.com/archives/${message.channel}/p${message.ts.split('.').join('')}`;
+
         await app.client.chat.postMessage({
             token: context.botToken,
             channel: 'GV0JAQE05',
-            text: `<@${message.user}> posted a trigger in <#${message.channel}>\n>${message.text}`
+            text: `<@${message.user}> posted a <${url}|trigger> in <#${message.channel}>`
         });
     } catch (error) {
         console.error(error);
