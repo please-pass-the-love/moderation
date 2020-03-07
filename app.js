@@ -58,7 +58,7 @@ const goodbyeRegex =
     new RegExp(buildSalutationRegex(goodbyes), 'i');
 
 const triggerRegex =
-    new RegExp(`\b(${triggers.join('|')})`, 'i');
+    new RegExp(`(${triggers.join('|')})`, 'i');
 
 const app = new App({
     token: process.env.SLACK_BOT_TOKEN,
