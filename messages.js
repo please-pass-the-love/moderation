@@ -224,3 +224,23 @@ module.exports.dogsays = [
     "Woof! Woof!",
     "I can has petz now?",
 ];
+
+module.exports.welcome = `*Hello and welcome to the PPTL Youth Slack Space to connect, share, and learn from each other!*
+
+This is a place for you to be able to meet other PPTL youth from across Iowa and beyond. We want you to be able to share what you’re doing at your schools, exchange ideas, get some support and be lifted up by each other. This is an adult free space EXCEPT for PPTL staff that will just be hanging around to make sure things don’t go off the rails. Here are some things to keep in mind to make this the best experience for everyone:
+
+1. We are not mental health professionals, so this is not designed to be group therapy. It is meant to be a resource and place to connect for all of our PPTL youth. If you want a friend to join, they need to be affiliated with a Stomp Out Stigma group, Youth Advisory Board, or the Leadership Summit.
+
+2. Please be respectful of each other. Comments that include any hateful language won’t be tolerated and will be deleted. Go out of your way to lift up each other instead.
+
+3. If you are worried about anyone, let PPTL staff know right away.
+
+4. We love you. We genuinely want all of our youth to be happy and healthy. If we have any concerns about your well-being or the well-being of others, a staff may reach out to check-in. This is out of love.
+
+5. We won’t share what happens in this space with others unless someone is in danger and then we will do everything in our power to keep people safe.
+
+6. Have fun, like a ridiculous amount of fun. Enjoy the cats, affirmations, and tacos. So many tacos and bad jokes.
+
+*Go checkout our channels:*
+<#CV1BRHKB7>:  for calendar events
+<#CV3J13KP0>: for documents and shared resources`;

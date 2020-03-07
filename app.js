@@ -11,7 +11,8 @@ const {
     goodnights,
     goodbyes,
     affirmations,
-    triggers
+    triggers,
+    welcome
 } = require("./messages");
 
 function chooseRandom(list) {
@@ -82,6 +83,17 @@ app.message(goodnightRegex, ({ message, say }) => {
 
 app.message(goodbyeRegex, ({ message, say }) => {
     say(buildSalutation(goodbyes, message.user));
+});
+
+app.event('member_joined_channel', async ({payload}) => {
+    // welcome message when joining #general
+    if (payload.channel === 'CV05NN1V3') {
+        await app.client.chat.postMessage({
+            token: process.env.SLACK_BOT_TOKEN,
+            channel: payload.user,
+            text: welcome
+        });
+    }
 });
 
 app.event('app_mention', ({payload, say}) => {
