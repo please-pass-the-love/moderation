@@ -15,6 +15,12 @@ const {
     welcome
 } = require("./messages");
 
+const suggestionModal = require('./suggestionModal.json');
+
+function getFirstProp(obj) {
+    return obj[Object.keys(obj)[0]];
+}
+
 function chooseRandom(list) {
     const index = Math.floor(Math.random() * Math.floor(list.length));
     return list[index];
@@ -93,6 +99,37 @@ app.event('member_joined_channel', async ({payload}) => {
             channel: payload.user,
             text: welcome
         });
+    }
+});
+
+// Handles the slashcommand /suggestion to pop a modal for making suggestions to the private suggestions channel
+app.command('/suggestion', async ({ ack, body }) => {
+    ack();
+    try {
+        await app.client.views.open({
+            token: process.env.SLACK_BOT_TOKEN,
+            trigger_id: body.trigger_id,
+            view: suggestionModal
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
+});
+
+// Handles the 'Submit' postback when a user enter a suggestion and submits
+app.view('suggestionbox', async ({ ack, body }) => {
+    ack();
+    try {
+        const nameID = body['user']['id'];
+        const suggestion = getFirstProp(getFirstProp(body['view']['state']['values']))['value'];
+        await app.client.chat.postMessage({
+            token: process.env.SLACK_BOT_TOKEN,
+            channel: 'suggestions',
+            text: `<@${nameID}> posted a suggestion: ${suggestion}`
+        });
+    } catch (error) {
+        console.log(error);
     }
 });
 
